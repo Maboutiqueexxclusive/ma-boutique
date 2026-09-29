@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Boutique Exxclusive</title>
+    <title>Ma Boutique Exclusive</title>
     <style>
         /* Styles globaux */
         body {
@@ -90,7 +90,7 @@
             margin: 5px 0 0 0;
         }
 
-        /* Section de bienvenue (Ajout du CSS manquant) */
+        /* Section de bienvenue */
         .welcome-box {
             background-color: #1a1a1a;
             border-radius: 8px;
@@ -127,6 +127,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 20px;
+            margin-bottom: 50px;
         }
 
         .shop-card {
@@ -233,6 +234,53 @@
             background-color: #FFB6C1;
             color: #121212;
         }
+
+        /* Section Conditions Générales de Vente (CGV) */
+        .cgv-section {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 35px;
+            margin-top: 60px;
+        }
+
+        .cgv-section h2.cgv-main-title {
+            color: #FFB6C1;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #FFB6C1;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .cgv-article {
+            margin-bottom: 25px;
+        }
+
+        .cgv-article h3 {
+            color: #FFB6C1;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+
+        .cgv-article p, .cgv-article ul {
+            font-size: 0.9em;
+            color: #ccc;
+            margin: 5px 0;
+        }
+
+        .cgv-article ul {
+            padding-left: 20px;
+        }
+
+        .cgv-article li {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -252,7 +300,7 @@
             </div>
             <div class="info-item">
                 <h3>🔒 Confidentialité</h3>
-                <p>Vos informations personnelles restent strictement privées et sécurisées.</p>
+                <p>Vos informations personnelles restent strictly privées et sécurisées.</p>
             </div>
             <div class="info-item">
                 <h3>🎀 Sur-Mesure</h3>
@@ -262,12 +310,11 @@
 
         <div class="welcome-box">
             <img class="hostess-image" src="boutique.png" alt="Diana">
-            <p><strong>Bienvenue dans mon univers fait main !.</strong></p>
+            <p><strong>Bienvenue dans mon univers fait main !</strong></p>
             <p>Ici, la passion de la couture prend vie à travers des vêtements uniques, des sacs faits main soigneusement confectionnés et des créations originales pensées pour durer.</p>
             <p>Chaque pièce est réalisée avec amour, précision et une attention particulière portée aux détails et au choix des tissus.
 
 En plus de mes créations, je partage mon savoir-faire à travers des cours de couture adaptés à tous les niveaux. Que vous soyez totalement débutant ou que vous souhaitiez perfectionner vos techniques, rejoignez-moi pour apprendre à créer vos propres pièces dans une ambiance conviviale et créative !</p>
-
         </div>
 
         <main>
@@ -305,7 +352,7 @@ En plus de mes créations, je partage mon savoir-faire à travers des cours de c
                         
                         <ul class="options-list">
                             <li>Choix des matières et de la couleur</li>
-                            <li>Options de personnalisatio</li>
+                            <li>Options de personnalisation</li>
                             <li>Sélection de la bandoulière et de la bijouterie</li>
                         </ul>
 
@@ -333,10 +380,84 @@ En plus de mes créations, je partage mon savoir-faire à travers des cours de c
                     </div>
                 </div>
 
-
-
             </div>
         </main>
+
+        <!-- Section Conditions Générales de Vente -->
+        <section class="cgv-section" id="cgv">
+            <h2 class="cgv-main-title">Conditions Générales de Vente (CGV)</h2>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 1 – CHAMP D'APPLICATION ET DISPOSITIONS GÉNÉRALES</h3>
+                <p>Les présentes Conditions Générales de Vente (CGV) s'appliquent, sans restriction ni réserve, à l'ensemble des ventes conclues par <strong>[Nom de votre Entreprise / Nom et Prénom]</strong> (« Le Vendeur ») auprès d'acheteurs non professionnels ou professionnels (« Le Client »), désirant acquérir :</p>
+                <ul>
+                    <li>Des <strong>vêtements et accessoires cousus main</strong> ;</li>
+                    <li>Des <strong>services de leçons/ateliers de couture</strong> (en présentiel ou en ligne).</li>
+                </ul>
+                <p>Toute commande ou réservation effectuée sur le site implique l'acceptation sans réserve par le Client des présentes CGV.</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 2 – MENTIONS LÉGALES</h3>
+                <p>Le présent site est édité par :</p>
+                <ul>
+                    <li><strong>Raison sociale / Nom :</strong> [Votre nom ou raison sociale]</li>
+                    <li><strong>Statut juridique :</strong> [Ex : Auto-entrepreneur / EI / SASU]</li>
+                    <li><strong>SIRET :</strong> [Numéro SIRET]</li>
+                    <li><strong>Adresse du siège social :</strong> [Votre adresse]</li>
+                    <li><strong>Email :</strong> [Votre adresse e-mail]</li>
+                    <li><strong>Téléphone :</strong> [Votre numéro de téléphone]</li>
+                    <li><strong>TVA :</strong> [Ex : "TVA non applicable, art. 293 B du CGI" ou votre n° de TVA]</li>
+                </ul>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 3 – PRODUITS (VÊTEMENTS ET ACCESSOIRES COUSUS MAIN)</h3>
+                <p><strong>1. Caractéristiques des articles :</strong> Les vêtements et accessoires proposés sont confectionnés de manière artisanale (« cousus main »). En raison de ce caractère artisanal et de la variation des affichages d'écran, de légères différences de nuances ou de finitions peuvent exister par rapport aux photographies.</p>
+                <p><strong>2. Commandes sur mesure ou personnalisées :</strong> En cas de création personnalisée ou sur mesure, le Client s'engage à fournir des mensurations précises. Le Vendeur ne pourra être tenu responsable des erreurs de taille découlant de mesures erronées fournies par le Client.</p>
+                <p><strong>3. Disponibilité :</strong> Les produits sont proposés dans la limite des stocks disponibles (pièces uniques ou séries limitées).</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 4 – PRESTATIONS DE SERVICES (LEÇONS DE COUTURE)</h3>
+                <p><strong>1. Inscriptions et réservation :</strong> La réservation d'une leçon ou d'un atelier de couture s'effectue sous réserve de places disponibles.</p>
+                <p><strong>2. Report et annulation par le Client :</strong></p>
+                <ul>
+                    <li>Plus de 48h avant la leçon : La séance peut être reportée sans frais ou remboursée.</li>
+                    <li>Moins de 48h avant la leçon : La séance est due et ne donnera lieu à aucun remboursement ni report, sauf cas de force majeure.</li>
+                </ul>
+                <p><strong>3. Annulation par le Vendeur :</strong> En cas d'annulation du cours par le Vendeur, un report de la séance ou un remboursement intégral sera proposé.</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 5 – PRIX ET MODALITÉS DE PAIEMENT</h3>
+                <p><strong>1. Prix :</strong> Les prix affichés sont indiqués en Euros (€). Le Vendeur se réserve le droit de modifier ses prix à tout moment, mais les prestations/articles seront facturés sur la base des tarifs en vigueur au moment de la commande.</p>
+                <p><strong>2. Frais de port :</strong> Pour les vêtements et objets physiques, les frais de livraison sont calculés et indiqués avant la validation définitive de la commande.</p>
+                <p><strong>3. Paiement :</strong> Le paiement est exigible immédiatement à la commande.</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 6 – LIVRAISON</h3>
+                <p><strong>1. Délais :</strong> Pour les articles en stock, expédition sous 3 à 5 jours ouvrés. Pour les créations sur mesure, le délai de confection est précisé lors de la commande.</p>
+                <p><strong>2. Transport :</strong> Les produits sont livrés à l'adresse indiquée par le Client. Le Vendeur n'est pas responsable des retards d'acheminement imputables au transporteur.</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 7 – DROIT DE RÉTRACTATION ET RETOURS</h3>
+                <p><strong>1. Produits en stock :</strong> Le Client dispose d'un délai de 14 jours à compter de la réception pour exercer son droit de rétractation (frais de retour à la charge du Client). Le produit doit être retourné neuf et dans son état d'origine.</p>
+                <p><strong>2. Produits sur mesure :</strong> Conformément à la réglementation, le droit de rétractation ne s'applique pas aux articles confectionnés sur mesure ou nettement personnalisés.</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 8 – PROPRIÉTÉ INTELLECTUELLE ET DONNÉES PERSONNELLES</h3>
+                <p>Tous les visuels, modèles, patrons et supports de cours figurant sur le site sont la propriété exclusive du Vendeur. Les données personnelles collectées sont uniquement utilisées pour la gestion de vos commandes et le respect des obligations légales.</p>
+            </div>
+
+            <div class="cgv-article">
+                <h3>ARTICLE 9 – LITIGES ET DROIT APPLICABLE</h3>
+                <p>Les présentes CGV sont soumises au droit français. En cas de litige, une solution amiable sera recherchée en priorité. À défaut, le Client peut recourir gratuitement à un médiateur de la consommation agréé.</p>
+            </div>
+        </section>
 
     </div>
 
