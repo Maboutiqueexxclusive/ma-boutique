@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ma Boutique Exclusive - Diana</title>
     <style>
-        /* Styles globaux cohérents avec le reste du site */
+        /* Styles globaux */
         body {
             background-color: #121212;
             color: #e0e0e0;
@@ -21,7 +21,6 @@
             padding: 40px 20px;
         }
 
-        /* Bouton de retour à l'accueil */
         .btn-back {
             display: inline-block;
             margin-bottom: 25px;
@@ -60,7 +59,7 @@
             margin: 0;
         }
 
-        /* Bannière d'informations & discrétion */
+        /* Encadré d'information */
         .discreet-info-box {
             background-color: #1a1a1a;
             border: 1px solid #FFB6C1;
@@ -91,6 +90,37 @@
             margin: 5px 0 0 0;
         }
 
+        /* Section de bienvenue (Ajout du CSS manquant) */
+        .welcome-box {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid #222;
+            overflow: hidden;
+        }
+
+        .hostess-image {
+            float: left;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 20px 10px 0;
+            border: 2px solid #FFB6C1;
+        }
+
+        @media (max-width: 600px) {
+            .hostess-image {
+                float: none;
+                display: block;
+                margin: 0 auto 15px auto;
+            }
+            .welcome-box {
+                text-align: center;
+            }
+        }
+
         /* Grille des articles */
         .shop-grid {
             display: grid;
@@ -99,7 +129,6 @@
             margin-top: 20px;
         }
 
-        /* Carte de produit */
         .shop-card {
             background-color: #1a1a1a;
             border-radius: 8px;
@@ -185,7 +214,6 @@
             color: #FFB6C1;
         }
 
-        /* Boutons de commande */
         .btn-order {
             display: block;
             width: 100%;
@@ -205,27 +233,6 @@
             background-color: #FFB6C1;
             color: #121212;
         }
-
-        /* Section commandes personnalisées */
-        .custom-order-section {
-            margin-top: 50px;
-            background-color: #1a1a1a;
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid #FFB6C1;
-            text-align: center;
-        }
-
-        .custom-order-section h2 {
-            color: #FFB6C1;
-            margin-top: 0;
-        }
-
-        .custom-order-section p {
-            color: #ccc;
-            max-width: 700px;
-            margin: 10px auto 20px auto;
-        }
     </style>
 </head>
 <body>
@@ -233,7 +240,7 @@
     <div id="content">
 
         <header>
-            <h1>Ma Boutique Excusive</h1>
+            <h1>Ma Boutique Exclusive</h1>
             <p>Retrouvez mes petits trésors personnels, préparés spécialement selon vos envies.</p>
         </header>
 
@@ -249,18 +256,18 @@
             </div>
             <div class="info-item">
                 <h3>🎀 Sur-Mesure</h3>
-                <p>Temps de port (24 ou 48h) au choix. Envoi sous réserve de délai selon la demande.</p>
+                <p>Participez à mes sessions de couture</p>
             </div>
         </div>
 
- <div class="welcome-box">
-            <img class="hostess-image" src="Diana_014.png?raw=true" alt="Diana">
-            <p><strong>Je suis Diana, maman franco-asiatique, pétillante et un brin coquine, j'aime profiter de la vie sans me prendre la tête. </strong></p>
-            <p>Alors que je franchis le cap des 40 ans, j’ai eu envie de partager mon univers avec vous et de me dévoiler un peu plus. </p>
-            <p>Entre les applis et les dizaines de sites de rencontre, j'avoue que je m'y perdais un peu… J'en ai eu marre d'être éparpillée partout ! J'ai donc préféré créer mon propre petit espace perso : un endroit plus
-                intime, simple et direct pour vous partager mon univers et vous racontez mon parcours que la modération des autres sites ne laisse pas toujours passé.... Installez-vous confortablement, découvrez-en un peu plus sur moi, et si le cœur vous en dit, venez me dire bonjour ! 😉
-                Je vends aussi mes dessous portés et d'autres accessoires si vous voulez me soutenir et voir toujours plus de contenus...
-            <br>Bisous, Diana</p>
+        <div class="welcome-box">
+            <img class="hostess-image" src="Diana_014.png" alt="Diana">
+            <p><strong>Bienvenue dans mon univers fait main !.</strong></p>
+            <p>Ici, la passion de la couture prend vie à travers des vêtements uniques, des sacs faits main soigneusement confectionnés et des créations originales pensées pour durer.</p>
+            <p>Chaque pièce est réalisée avec amour, précision et une attention particulière portée aux détails et au choix des tissus.
+
+En plus de mes créations, je partage mon savoir-faire à travers des cours de couture adaptés à tous les niveaux. Que vous soyez totalement débutant ou que vous souhaitiez perfectionner vos techniques, rejoignez-moi pour apprendre à créer vos propres pièces dans une ambiance conviviale et créative !</p>
+
         </div>
 
         <main>
@@ -269,12 +276,12 @@
                 <!-- Produit 1 -->
                 <div class="shop-card">
                     <div class="card-img-container">
-                        <img src="Culotte001.png" alt="Culotte en dentelle">
+                        <img src="Robe001.png" alt="Robe">
                         <span class="price-badge">À partir de 15€</span>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-title">Mes dessous</h2>
-                        <p class="card-description">Culotte, string tanga, bas ou collants fins. Portés spécialement selon la durée de votre choix.</p>
+                        <h2 class="card-title">Mes robes</h2>
+                        <p class="card-description">Robe faite maison.</p>
                         
                         <ul class="options-list">
                             <li>Option Portée 24h ou 48h</li>
@@ -289,12 +296,12 @@
                 <!-- Produit 2 -->
                 <div class="shop-card">
                     <div class="card-img-container">
-                        <img src="Diana_003.png" alt="Bas et collants">
+                        <img src="Diana_003.png" alt="Sac à main">
                         <span class="price-badge">À partir de 30€</span>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-title">Culottes avec photos</h2>
-                        <p class="card-description">Culottes, bas et dessous portés durant mes sorties, au travail, avec des photos en train de la porter.</p>
+                        <h2 class="card-title">Sac à main</h2>
+                        <p class="card-description">Sacs à main</p>
                         
                         <ul class="options-list">
                             <li>Option Portée 24h ou 48h</li>
@@ -313,8 +320,8 @@
                         <span class="price-badge">60€</span>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-title">Pack "Diana Coquine"</h2>
-                        <p class="card-description">Un coffret complet pour les plus gourmands contenant une tenue de mon choix portée, des photos et une vidéo coquine.</p>
+                        <h2 class="card-title">Leçons de couture</h2>
+                        <p class="card-description">Des sessions pour vous apprendre à coudre et faire vos produits</p>
                         
                         <ul class="options-list">
                             <li>1 tenue sexy de mon choix portée 48h</li>
@@ -326,23 +333,9 @@
                     </div>
                 </div>
 
+
+
             </div>
-
-            <!-- Section sur-mesure -->
-<div class="custom-order-section">
-    <h2>Vidéo personnalisée ✨</h2>
-    
-    <!-- Ajout de position: relative et d'une largeur max ici -->
-    <div class="image-container" style="position: relative; display: inline-block; max-width: 300px;">
-        <img src="Diana_013.png" alt="Pack privilège" style="width: 100%; height: auto; display: block;">
-        
-        <!-- Ajout de position: absolute pour placer le badge sur l'image -->
-        <span class="price-badge" style="position: absolute; top: 10px; right: 10px;">150€</span>
-    </div>
-
-    <p>Vous ne souhaitez pas acheter une tenue mais obtenir une vidéo personnalisée ? Commandez-moi une vidéo selon vos gouts</p>
-    <a href="mailto:votre-email@exemple.com?subject=Demande%20sur%20mesure" class="btn-order" style="max-width: 300px; margin: 0 auto;">Commander une vidéo personnalisée</a>
-</div>
         </main>
 
     </div>
