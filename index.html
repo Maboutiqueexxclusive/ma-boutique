@@ -436,7 +436,7 @@
     </div>
 
     <!-- ==================== STYLES CSS (À inclure dans votre <head> ou fichier .css) ==================== -->
-    <style>
+   <style>
         .site-footer {
             background-color: #f8f9fa;
             border-top: 1px solid #e9ecef;
@@ -474,7 +474,7 @@
             text-decoration: underline;
         }
 
-        /* Styles Modale CGV */
+        /* Styles Modale CGV sans cadre blanc */
         .modal {
             display: none;
             position: fixed;
@@ -483,22 +483,23 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.85); /* Arrière-plan légèrement plus sombre pour la lisibilité du texte */
         }
 
         .modal-content {
-            background-color: #fff;
+            background-color: transparent; /* Suppression du cadre blanc */
+            border: none;
+            box-shadow: none;
             margin: 5% auto;
             padding: 25px;
-            border-radius: 8px;
+            border-radius: 0;
             width: 90%;
             max-width: 750px;
             max-height: 80vh;
             overflow-y: auto;
             text-align: left;
             font-family: sans-serif;
-            color: #333;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #ffffff; /* Texte en blanc pour être bien lisible sur le fond sombre */
         }
 
         .close-btn {
@@ -506,23 +507,28 @@
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
-            color: #aaa;
+            color: #ffffff;
         }
 
         .close-btn:hover {
-            color: #000;
+            color: #cccccc;
         }
 
         .modal-body h3 {
             margin-top: 20px;
             font-size: 1.1rem;
-            color: #222;
+            color: #ffffff;
         }
 
         .modal-body p {
             font-size: 0.9rem;
             line-height: 1.5;
-            color: #555;
+            color: #dddddd;
+        }
+
+        .modal-body a {
+            color: #ffffff;
+            text-decoration: underline;
         }
     </style>
 
