@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Boutique Exclusive</title>
+    <title>Ma Boutique Exclusive - Diana</title>
     <style>
-        /* Styles globaux */
+        /* Styles globaux cohérents avec le reste du site */
         body {
             background-color: #121212;
             color: #e0e0e0;
@@ -21,6 +21,7 @@
             padding: 40px 20px;
         }
 
+        /* Bouton de retour à l'accueil */
         .btn-back {
             display: inline-block;
             margin-bottom: 25px;
@@ -59,7 +60,7 @@
             margin: 0;
         }
 
-        /* Encadré d'information */
+        /* Bannière d'informations & discrétion */
         .discreet-info-box {
             background-color: #1a1a1a;
             border: 1px solid #FFB6C1;
@@ -90,46 +91,15 @@
             margin: 5px 0 0 0;
         }
 
-        /* Section de bienvenue */
-        .welcome-box {
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 40px;
-            border: 1px solid #222;
-            overflow: hidden;
-        }
-
-        .hostess-image {
-            float: left;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 0 20px 10px 0;
-            border: 2px solid #FFB6C1;
-        }
-
-        @media (max-width: 600px) {
-            .hostess-image {
-                float: none;
-                display: block;
-                margin: 0 auto 15px auto;
-            }
-            .welcome-box {
-                text-align: center;
-            }
-        }
-
         /* Grille des articles */
         .shop-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 20px;
-            margin-bottom: 50px;
         }
 
+        /* Carte de produit */
         .shop-card {
             background-color: #1a1a1a;
             border-radius: 8px;
@@ -215,6 +185,7 @@
             color: #FFB6C1;
         }
 
+        /* Boutons de commande */
         .btn-order {
             display: block;
             width: 100%;
@@ -235,53 +206,25 @@
             color: #121212;
         }
 
-        /* Trait de séparation avant les CGV */
-        .cgv-divider {
-            border: 0;
-            border-top: 1px solid #333;
-            margin: 60px 0 30px 0;
-        }
-
-        /* Section Conditions Générales de Vente (Police plus petite) */
-        .cgv-section {
-            background-color: #181818;
+        /* Section commandes personnalisées */
+        .custom-order-section {
+            margin-top: 50px;
+            background-color: #1a1a1a;
+            padding: 30px;
             border-radius: 8px;
-            padding: 25px;
-            font-size: 0.8em; /* Police réduite */
-            color: #999;
-            line-height: 1.5;
-        }
-
-        .cgv-section h2.cgv-main-title {
-            color: #FFB6C1;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 20px;
+            border-left: 4px solid #FFB6C1;
             text-align: center;
         }
 
-        .cgv-article {
-            margin-bottom: 18px;
+        .custom-order-section h2 {
+            color: #FFB6C1;
+            margin-top: 0;
         }
 
-        .cgv-article h3 {
-            color: #ddd;
-            font-size: 0.95em;
-            margin-bottom: 6px;
-        }
-
-        .cgv-article p, .cgv-article ul {
-            margin: 4px 0;
-        }
-
-        .cgv-article ul {
-            padding-left: 18px;
-        }
-
-        .cgv-article li {
-            margin-bottom: 3px;
+        .custom-order-section p {
+            color: #ccc;
+            max-width: 700px;
+            margin: 10px auto 20px auto;
         }
     </style>
 </head>
@@ -290,15 +233,15 @@
     <div id="content">
 
         <header>
-            <h1>Ma Boutique Exclusive</h1>
-            <p>Retrouvez mes créations personnelles, préparées spécialement selon vos envies.</p>
+            <h1>Ma Boutique Excusive</h1>
+            <p>Retrouvez mes petits trésors personnels, préparés spécialement selon vos envies.</p>
         </header>
 
         <!-- Encadré Réassurance & Discrétion -->
         <div class="discreet-info-box">
             <div class="info-item">
-                <h3>📦 Envoi rapide</h3>
-                <p>Enveloppe ou colis envoyé dans les plus brefs délais</p>
+                <h3>📦 Envoi 100% Discret</h3>
+                <p>Enveloppe ou colis neutre sans aucune mention du contenu ni du site.</p>
             </div>
             <div class="info-item">
                 <h3>🔒 Confidentialité</h3>
@@ -306,17 +249,18 @@
             </div>
             <div class="info-item">
                 <h3>🎀 Sur-Mesure</h3>
-                <p>Participez à mes sessions de couture</p>
+                <p>Temps de port (24 ou 48h) au choix. Envoi sous réserve de délai selon la demande.</p>
             </div>
         </div>
 
-        <div class="welcome-box">
-            <img class="hostess-image" src="boutique.png" alt="Diana">
-            <p><strong>Bienvenue dans mon univers fait main !</strong></p>
-            <p>Ici, la passion de la couture prend vie à travers des vêtements uniques, des sacs faits main soigneusement confectionnés et des créations originales pensées pour durer.</p>
-            <p>Chaque pièce est réalisée avec amour, précision et une attention particulière portée aux détails et au choix des tissus.
-
-En plus de mes créations, je partage mon savoir-faire à travers des cours de couture adaptés à tous les niveaux. Que vous soyez totalement débutant ou que vous souhaitiez perfectionner vos techniques, rejoignez-moi pour apprendre à créer vos propres pièces dans une ambiance conviviale et créative !</p>
+ <div class="welcome-box">
+            <img class="hostess-image" src="Diana_014.png?raw=true" alt="Diana">
+            <p><strong>Je suis Diana, maman franco-asiatique, pétillante et un brin coquine, j'aime profiter de la vie sans me prendre la tête. </strong></p>
+            <p>Alors que je franchis le cap des 40 ans, j’ai eu envie de partager mon univers avec vous et de me dévoiler un peu plus. </p>
+            <p>Entre les applis et les dizaines de sites de rencontre, j'avoue que je m'y perdais un peu… J'en ai eu marre d'être éparpillée partout ! J'ai donc préféré créer mon propre petit espace perso : un endroit plus
+                intime, simple et direct pour vous partager mon univers et vous racontez mon parcours que la modération des autres sites ne laisse pas toujours passé.... Installez-vous confortablement, découvrez-en un peu plus sur moi, et si le cœur vous en dit, venez me dire bonjour ! 😉
+                Je vends aussi mes dessous portés et d'autres accessoires si vous voulez me soutenir et voir toujours plus de contenus...
+            <br>Bisous, Diana</p>
         </div>
 
         <main>
@@ -325,17 +269,17 @@ En plus de mes créations, je partage mon savoir-faire à travers des cours de c
                 <!-- Produit 1 -->
                 <div class="shop-card">
                     <div class="card-img-container">
-                        <img src="robe.png" alt="Robe">
+                        <img src="Culotte001.png" alt="Culotte en dentelle">
                         <span class="price-badge">À partir de 15€</span>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-title">Mes robes</h2>
-                        <p class="card-description">Robe faite maison.</p>
+                        <h2 class="card-title">Mes dessous</h2>
+                        <p class="card-description">Culotte, string tanga, bas ou collants fins. Portés spécialement selon la durée de votre choix.</p>
                         
                         <ul class="options-list">
-                            <li>Choix des mensurations ou ajustements</li>
-                            <li>Sélection du tissu et de la couleur</li>
-                            <li>Options d'emballage et de finition</li>
+                            <li>Option Portée 24h ou 48h</li>
+                            <li>Parfumée à mon parfum préféré</li>
+                            <li>Mise sous vide hermétique pour préserver la fraîcheur</li>
                         </ul>
 
                         <a href="shop01.html" class="btn-order">Voir les modèles</a>
@@ -345,17 +289,17 @@ En plus de mes créations, je partage mon savoir-faire à travers des cours de c
                 <!-- Produit 2 -->
                 <div class="shop-card">
                     <div class="card-img-container">
-                        <img src="sac.png" alt="Sac à main">
+                        <img src="Diana_003.png" alt="Bas et collants">
                         <span class="price-badge">À partir de 30€</span>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-title">Sac à main</h2>
-                        <p class="card-description">Sacs à main</p>
+                        <h2 class="card-title">Culottes avec photos</h2>
+                        <p class="card-description">Culottes, bas et dessous portés durant mes sorties, au travail, avec des photos en train de la porter.</p>
                         
                         <ul class="options-list">
-                            <li>Choix des matières et de la couleur</li>
-                            <li>Options de personnalisation</li>
-                            <li>Sélection de la bandoulière et de la bijouterie</li>
+                            <li>Option Portée 24h ou 48h</li>
+                            <li>Envoi sous pli hermétique neutre</li>
+                            <li>5 Photos en train de la porter (x2 si 48h)</li>
                         </ul>
 
                         <a href="modele1b.html" class="btn-order">Voir les modèles</a>
@@ -365,17 +309,17 @@ En plus de mes créations, je partage mon savoir-faire à travers des cours de c
                 <!-- Produit 3 -->
                 <div class="shop-card">
                     <div class="card-img-container">
-                        <img src="atelier.png" alt="Pack privilège">
+                        <img src="Diana_010.png" alt="Pack privilège">
                         <span class="price-badge">60€</span>
                     </div>
                     <div class="card-content">
-                        <h2 class="card-title">Leçons de couture</h2>
-                        <p class="card-description">Des sessions pour vous apprendre à coudre et faire vos produits</p>
+                        <h2 class="card-title">Pack "Diana Coquine"</h2>
+                        <p class="card-description">Un coffret complet pour les plus gourmands contenant une tenue de mon choix portée, des photos et une vidéo coquine.</p>
                         
                         <ul class="options-list">
-                            <li>Niveau et format du cours</li>
-                            <li>Choix du projet à réaliser</li>
-                            <li>Lieu et fournitures</li>
+                            <li>1 tenue sexy de mon choix portée 48h</li>
+                            <li>10 Photos en train de la porter</li>
+                            <li>1 Une vidéo en train de me masturber avec</li>
                         </ul>
 
                         <a href="mailto:votre-email@exemple.com?subject=Commande%20Pack%20Privilege" class="btn-order">Commander le Pack</a>
@@ -383,85 +327,23 @@ En plus de mes créations, je partage mon savoir-faire à travers des cours de c
                 </div>
 
             </div>
+
+            <!-- Section sur-mesure -->
+<div class="custom-order-section">
+    <h2>Vidéo personnalisée ✨</h2>
+    
+    <!-- Ajout de position: relative et d'une largeur max ici -->
+    <div class="image-container" style="position: relative; display: inline-block; max-width: 300px;">
+        <img src="Diana_013.png" alt="Pack privilège" style="width: 100%; height: auto; display: block;">
+        
+        <!-- Ajout de position: absolute pour placer le badge sur l'image -->
+        <span class="price-badge" style="position: absolute; top: 10px; right: 10px;">150€</span>
+    </div>
+
+    <p>Vous ne souhaitez pas acheter une tenue mais obtenir une vidéo personnalisée ? Commandez-moi une vidéo selon vos gouts</p>
+    <a href="mailto:votre-email@exemple.com?subject=Demande%20sur%20mesure" class="btn-order" style="max-width: 300px; margin: 0 auto;">Commander une vidéo personnalisée</a>
+</div>
         </main>
-
-        <!-- Trait de séparation horizontal -->
-        <hr class="cgv-divider">
-
-        <!-- Section Conditions Générales de Vente -->
-        <section class="cgv-section" id="cgv">
-            <h2 class="cgv-main-title">Conditions Générales de Vente (CGV)</h2>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 1 – CHAMP D'APPLICATION ET DISPOSITIONS GÉNÉRALES</h3>
-                <p>Les présentes Conditions Générales de Vente (CGV) s'appliquent, sans restriction ni réserve, à l'ensemble des ventes conclues par <strong>Ma boutique exxclusive</strong> (« Le Vendeur ») auprès d'acheteurs non professionnels ou professionnels (« Le Client »), désirant acquérir :</p>
-                <ul>
-                    <li>Des <strong>vêtements et accessoires cousus main</strong> ;</li>
-                    <li>Des <strong>services de leçons/ateliers de couture</strong> (en présentiel ou en ligne).</li>
-                </ul>
-                <p>Toute commande ou réservation effectuée sur le site implique l'acceptation sans réserve par le Client des présentes CGV.</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 2 – MENTIONS LÉGALES</h3>
-                <p>Le présent site est édité par :</p>
-                <ul>
-                    <li><strong>Nom :</strong> Ma Boutique Exxclusive</li>
-                    <li><strong>Statut juridique :</strong>Freelance</li>
-                    <li><strong>NIF (SIRET) :</strong> 290955009</li>
-                    <li><strong>Adresse du siège social :</strong> Rua Maria Lamas, 10, Vila Franca Xira, Portugal</li>
-                    <li><strong>Contact :</strong> maboutiqueexxclusive@gmail.com</li>
-                    <li><strong>TVA :</strong> TVA non applicable, artigo 6.º, n.º 6, alínea a) do CIVA</li>
-                </ul>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 3 – PRODUITS (VÊTEMENTS ET ACCESSOIRES COUSUS MAIN)</h3>
-                <p><strong>1. Caractéristiques des articles :</strong> Les vêtements et accessoires proposés sont confectionnés de manière artisanale (« cousus main »). En raison de ce caractère artisanal et de la variation des affichages d'écran, de légères différences de nuances ou de finitions peuvent exister par rapport aux photographies.</p>
-                <p><strong>2. Commandes sur mesure ou personnalisées :</strong> En cas de création personnalisée ou sur mesure, le Client s'engage à fournir des mensurations précises. Le Vendeur ne pourra être tenu responsable des erreurs de taille découlant de mesures erronées fournies par le Client.</p>
-                <p><strong>3. Disponibilité :</strong> Les produits sont proposés dans la limite des stocks disponibles (pièces uniques ou séries limitées).</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 4 – PRESTATIONS DE SERVICES (LEÇONS DE COUTURE)</h3>
-                <p><strong>1. Inscriptions et réservation :</strong> La réservation d'une leçon ou d'un atelier de couture s'effectue sous réserve de places disponibles.</p>
-                <p><strong>2. Report et annulation par le Client :</strong></p>
-                <ul>
-                    <li>Plus de 48h avant la leçon : La séance peut être reportée sans frais ou remboursée.</li>
-                    <li>Moins de 48h avant la leçon : La séance est due et ne donnera lieu à aucun remboursement ni report, sauf cas de force majeure.</li>
-                </ul>
-                <p><strong>3. Annulation par le Vendeur :</strong> En cas d'annulation du cours par le Vendeur, un report de la séance ou un remboursement intégral sera proposé.</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 5 – PRIX ET MODALITÉS DE PAIEMENT</h3>
-                <p><strong>1. Prix :</strong> Les prix affichés sont indiqués en Euros (€). Le Vendeur se réserve le droit de modifier ses prix à tout moment, mais les prestations/articles seront facturés sur la base des tarifs en vigueur au moment de la commande.</p>
-                <p><strong>2. Frais de port :</strong> Pour les vêtements et objets physiques, les frais de livraison sont calculés et indiqués avant la validation définitive de la commande.</p>
-                <p><strong>3. Paiement :</strong> Le paiement est exigible immédiatement à la commande.</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 6 – LIVRAISON</h3>
-                <p><strong>1. Délais :</strong> Pour les articles en stock, expédition sous 3 à 5 jours ouvrés. Pour les créations sur mesure, le délai de confection est précisé lors de la commande.</p>
-                <p><strong>2. Transport :</strong> Les produits sont livrés à l'adresse indiquée par le Client. Le Vendeur n'est pas responsable des retards d'acheminement imputables au transporteur.</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 7 – DROIT DE RÉTRACTATION ET RETOURS</h3>
-                <p><strong>1. Produits en stock :</strong> Le Client dispose d'un délai de 14 jours à compter de la réception pour exercer son droit de rétractation (frais de retour à la charge du Client). Le produit doit être retourné neuf et dans son état d'origine.</p>
-                <p><strong>2. Produits sur mesure :</strong> Conformément à la réglementation, le droit de rétractation ne s'applique pas aux articles confectionnés sur mesure ou nettement personnalisés.</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 8 – PROPRIÉTÉ INTELLECTUELLE ET DONNÉES PERSONNELLES</h3>
-                <p>Tous les visuels, modèles, patrons et supports de cours figurant sur le site sont la propriété exclusive du Vendeur. Les données personnelles collectées sont uniquement utilisées pour la gestion de vos commandes et le respect des obligations légales.</p>
-            </div>
-
-            <div class="cgv-article">
-                <h3>ARTICLE 9 – LITIGES ET DROIT APPLICABLE</h3>
-                <p>Les présentes CGV sont soumises au droit français. En cas de litige, une solution amiable sera recherchée en priorité. À défaut, le Client peut recourir gratuitement à un médiateur de la consommation agréé.</p>
-            </div>
-        </section>
 
     </div>
 
