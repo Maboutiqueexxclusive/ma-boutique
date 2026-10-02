@@ -374,6 +374,180 @@
                 </div>
 
     </div>
+<!-- ==================== PIED DE PAGE (FOOTER) ==================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Votre Marque. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="#" id="open-cgv">Conditions Générales de Vente (CGV)</a></li>
+                <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></li>
+            </ul>
+        </div>
+    </footer>
 
+    <!-- ==================== MODALE DES CGV ==================== -->
+    <div id="cgv-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Conditions Générales de Vente (CGV)</h2>
+            <div class="modal-body">
+                <p><em>Dernière mise à jour : 2026</em></p>
+
+                <h3>ARTICLE 1 – PRÉSENTATION ET IDENTITÉ DU VENDEUR</h3>
+                <p>Les présentes Conditions Générales de Vente (CGV) s'appliquent à toutes les ventes conclues sur le présent site internet auprès des consommateurs.</p>
+                <p>
+                    <strong>Éditeur du site :</strong><br>
+                    Nom / Prénom : [Votre Nom et Prénom]<br>
+                    Statut : Empresário em Nome Individual<br>
+                    NIF : [Votre NIF]<br>
+                    Adresse : [Votre Adresse au Portugal]<br>
+                    E-mail : [Votre E-mail de contact]<br>
+                    Téléphone : [Votre Téléphone]
+                </p>
+
+                <h3>ARTICLE 2 – CHAMP D'APPLICATION ET ACCEPTATION</h3>
+                <p>Les présentes CGV régissent exclusivement les relations contractuelles entre le Vendeur et tout acheteur effectuant une commande sur le site. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
+
+                <h3>ARTICLE 3 – PRODUITS ET DISPONIBILITÉ</h3>
+                <p>Les produits proposés sont des vêtements et accessoires décrits avec la plus grande exactitude possible. Les photographies sont fournies à titre illustratif. Les offres sont valables dans la limite des stocks disponibles.</p>
+
+                <h3>ARTICLE 4 – PRIX ET PAIEMENT</h3>
+                <p>Les prix sont indiqués en Euros (€) TTC, hors frais de livraison. TVA non applicable selon l'article 53 du CIVA (Portugal). Le paiement s'effectue en ligne via les moyens sécurisés proposés lors de la commande.</p>
+
+                <h3>ARTICLE 5 – LIVRAISON</h3>
+                <p>Les livraisons sont effectuées aux adresses indiquées lors de la commande. Les délais indicatifs d'expédition sont de 2 à 5 jours ouvrés pour le Portugal continental.</p>
+
+                <h3>ARTICLE 6 – DROIT DE RÉTRACTATION (14 JOURS)</h3>
+                <p>Conformément au Décret-Loi n° 24/2014 du 14 février, le Client dispose d'un délai de 14 jours calendaires à compter de la réception de sa commande pour exercer son droit de rétractation sans avoir à justifier de motifs. Les vêtements doivent être retournés dans leur état d'origine, neufs et non portés. Les frais de retour restent à la charge du Client.</p>
+
+                <h3>ARTICLE 7 – GARANTIES LÉGALES</h3>
+                <p>Conformément au Décret-Loi n° 84/2021 du 18 octobre, les biens neufs bénéficient d'une garantie légale de conformité de 3 ans à compter de la délivrance.</p>
+
+                <h3>ARTICLE 8 – PROTECTION DES DONNÉES (RGPD)</h3>
+                <p>Les données personnelles collectées sont nécessaires au traitement de votre commande. Conformément au RGPD (Règlement UE 2016/679), vous disposez d'un droit d'accès, de rectification et de suppression de vos données.</p>
+
+                <h3>ARTICLE 9 – RÉSOLUTION DES LITIGES DE CONSOMMATION</h3>
+                <p>En cas de litige, le Client peut recourir au Livro de Reclamações Eletrónico (<a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a>) ou à une entité de Résolution Alternative des Litiges (RAL), telle que le CNIACC (<a href="https://www.cniacc.pt" target="_blank" rel="noopener">www.cniacc.pt</a>).</p>
+
+                <h3>ARTICLE 10 – DROIT APPLICABLE</h3>
+                <p>Les présentes CGV sont soumises au droit portugais.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== STYLES CSS (À inclure dans votre <head> ou fichier .css) ==================== -->
+    <style>
+        .site-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 20px 0;
+            font-size: 0.85rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Styles Modale CGV */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 750px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: left;
+            font-family: sans-serif;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .modal-body h3 {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+
+        .modal-body p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+        }
+    </style>
+
+    <!-- ==================== SCRIPT JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("cgv-modal");
+            const btn = document.getElementById("open-cgv");
+            const closeBtn = document.querySelector(".close-btn");
+
+            btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                modal.style.display = "block";
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
