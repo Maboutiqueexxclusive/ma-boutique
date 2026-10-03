@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique Exxclusive - Galerie Diana</title>
+    <style>
+        /* Styles globaux */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        #content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            color: #FFB6C1;
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #aaa;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        /* Grille des catégories principales */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Carte de catégorie */
+        .category-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #222;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            border-color: #FFB6C1;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.15);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            color: #fff;
+            font-size: 1.6em;
+            margin: 0 0 12px 0;
+        }
+
+        .card-description {
+            color: #bbb;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-enter {
+            display: block;
+            text-align: center;
+            background-color: #252525;
+            color: #FFB6C1;
+            border: 1px solid #FFB6C1;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .btn-enter {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        /* Adaptation sur écran mobile */
+        @media (max-width: 600px) {
+            #content {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .card-img-wrapper {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+
+        <header>
+            <h1>Ma Boutique Exxclusive</h1>
+            <p>Bienvenue dans l'univers exclusif de Diana. Choisissez un espace à explorer :</p>
+        </header>
+
+        <div class="category-grid">
+
+            <!-- Section Photos (Renvoie vers le code fourni) -->
+            <a href="photos.html" class="category-card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/id/1015/800/600" alt="Galerie Photos">
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">📷 Collections Photos</h2>
+                    <p class="card-description">Parcourez nos séries de photos thématiques haute résolution (Élégance, Urban Chic, Studio Glamour...).</p>
+                    <span class="btn-enter">Accéder à la Galerie Photos</span>
+                </div>
+            </a>
+
+            <!-- Section Vidéos (Renvoie vers le deuxième code) -->
+            <a href="videos.html" class="category-card">
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/id/1025/800/600" alt="Galerie Vidéos">
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">🎬 Collections Vidéos</h2>
+                    <p class="card-description">Découvrez nos contenus vidéo exclusifs, teasers, coulisses et séquences HD/4K.</p>
+                    <span class="btn-enter">Accéder à la Galerie Vidéos</span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
