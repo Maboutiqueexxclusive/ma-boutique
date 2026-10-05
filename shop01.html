@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique Exclusive - Diana</title>
+    <style>
+        /* Styles globaux */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        #content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Bouton de retour à l'accueil */
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #FFB6C1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            padding: 8px 16px;
+            border: 1px solid #FFB6C1;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            color: #FFB6C1;
+            font-size: 2.3em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #aaa;
+            margin: 0;
+        }
+
+        /* Liste verticale des articles */
+        .shop-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        /* Carte de produit horizontale */
+        .shop-card {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 15px;
+            gap: 20px;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-3px);
+            border-color: #FFB6C1;
+        }
+
+        /* Image à gauche */
+        .card-img-container {
+            width: 220px;
+            height: 180px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden; /* Empêche l'image agrandie de sortir du cadran */
+        }
+
+        .shop-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease; /* Animation fluide du zoom */
+        }
+
+        /* Effet d'agrandissement au survol de la carte ou de l'image */
+        .shop-card:hover img {
+            transform: scale(1.1); /* Ajustez (ex: 1.15 pour plus grand) */
+        }
+
+        /* Texte au milieu */
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            color: #fff;
+            font-size: 1.3em;
+            margin: 0 0 8px 0;
+        }
+
+        .card-description {
+            color: #bbb;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .options-list li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .options-list li::before {
+            content: "✦";
+            color: #FFB6C1;
+        }
+
+        /* Zone des boutons à droite */
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 140px;
+            flex-shrink: 0;
+        }
+
+        .btn-order {
+            display: block;
+            text-align: center;
+            background-color: #252525;
+            color: #FFB6C1;
+            border: 1px solid #FFB6C1;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            font-size: 0.9em;
+        }
+
+        .btn-order:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        /* Adaptation sur écran mobile */
+        @media (max-width: 768px) {
+            .shop-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card-img-container {
+                width: 100%;
+                height: 200px;
+            }
+
+            .card-actions {
+                width: 100%;
+                flex-direction: row;
+            }
+
+            .btn-order {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <a href="index.html" class="btn-back">← Retour à la boutique</a>
+
+        <header>
+            <h1>Ma Boutique Exclusive</h1>
+            <p>Choisissez l'option qui vous convient et revenez régulièrement pour voir les dernières annonces</p>
+        </header>
+
+        <div class="shop-list">
+
+            <!-- Article 1 -->
+            <div class="shop-card">
+                <div class="card-img-container">
+                    <img src="shop01001.png" alt="Article 1">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Option 1 - String</h2>
+                    <p class="card-description">String en dentelle avec petit noeud</p>
+                    <ul class="options-list">
+                        <li>Envoi rapide et discret</li>
+                        <li>Couleur en fonction de la disponibilité</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-order">Porté 24h - 15€</a>
+                    <a href="#" class="btn-order">Porté 48h - 20€</a>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="shop-card">
+                <div class="card-img-container">
+                    <img src="shop01002.png" alt="Article 2">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Option 2 - Culotte</h2>
+                    <p class="card-description">Culotte rose et dentelle noire.</p>
+                    <ul class="options-list">
+                        <li>Envoi rapide et discret</li>
+                        <li>Mon petit coup de coeur</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-order">Porté 24h - 25€</a>
+                    <a href="#" class="btn-order">Porté 48h - 30€</a>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="shop-card">
+                <div class="card-img-container">
+                    <img src="shop01003.png" alt="Article 3">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Option 3 - Tanga</h2>
+                    <p class="card-description">Tanga noir avec dentelle blanche</p>
+                    <ul class="options-list">
+                        <li>Envoi rapide et discret</li>
+                        <li>Mises à jour régulières</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-order">Porté 24h - 25€</a>
+                    <a href="#" class="btn-order">Porté 48h - 30 €</a>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="shop-card">
+                <div class="card-img-container">
+                    <img src="shop01004.png" alt="Article 4">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Option 4 - Nuisette</h2>
+                    <p class="card-description">Camisole bleu marine en dentelle et noeud</p>
+                    <ul class="options-list">
+                        <li>Envoi rapide et discret</li>
+                        <li>Mises à jour régulières</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-order">Porté 24h - 50€</a>
+                    <a href="#" class="btn-order">Porté 48h - 60€</a>
+                </div>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="shop-card">
+                <div class="card-img-container">
+                    <img src="shop01005.png" alt="Article 5">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Option 5 - Bas résille</h2>
+                    <p class="card-description">Bas résille noirs et noeud</p>
+                    <ul class="options-list">
+                        <li>Envoi rapide et discret</li>
+                        <li>Mises à jour régulières</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-order">Porté 24h - 20€</a>
+                    <a href="#" class="btn-order">Porté 48h - 25€</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
