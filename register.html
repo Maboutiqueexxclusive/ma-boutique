@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription - Boutique Roman Exclusif</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f6f8; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+    .card { background: #ffffff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+    .card h2 { margin-bottom: 10px; color: #333; text-align: center; }
+    .card p { color: #666; font-size: 14px; text-align: center; margin-bottom: 25px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 6px; color: #444; font-size: 14px; font-weight: 600; }
+    .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+    .btn-submit { width: 100%; padding: 12px; background-color: #0070f3; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+    .message { margin-top: 15px; padding: 10px; border-radius: 6px; font-size: 14px; text-align: center; display: none; }
+    .message.error { background-color: #ffe6e6; color: #d8000c; border: 1px solid #d8000c; }
+    .message.success { background-color: #e6ffe6; color: #270; border: 1px solid #270; }
+    .redirect-link { margin-top: 20px; text-align: center; font-size: 14px; }
+    .redirect-link a { color: #0070f3; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Inscription</h2>
+    <p>Créez votre compte pour réserver votre accès au roman</p>
+
+    <div id="status-message" class="message"></div>
+
+    <form id="register-form">
+      <div class="form-group">
+        <label for="reg-email">Adresse Email</label>
+        <input type="email" id="reg-email" placeholder="exemple@domaine.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-password">Mot de passe</label>
+        <input type="password" id="reg-password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn-submit">Créer mon compte</button>
+    </form>
+
+    <div class="redirect-link">
+      Déjà inscrit ? <a href="login.html">Se connecter</a>
+    </div>
+  </div>
+
+  <script>
+    // Même URL API que celle utilisée pour login
+    const API_URL = 'http://localhost:3000'; 
+
+    const registerForm = document.getElementById('register-form');
+    const statusMessage = document.getElementById('status-message');
+
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('reg-email').value;
+      const password = document.getElementById('reg-password').value;
+
+      statusMessage.style.display = 'none';
+
+      try {
+        const response = await fetch(`${API_URL}/api/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          statusMessage.textContent = 'Compte créé avec succès ! Redirection vers la connexion...';
+          statusMessage.className = 'message success';
+          statusMessage.style.display = 'block';
+
+          // Redirection vers la page de connexion après 1.5s
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 1500);
+        } else {
+          statusMessage.textContent = data.error || 'Erreur lors de l\'inscription.';
+          statusMessage.className = 'message error';
+          statusMessage.style.display = 'block';
+        }
+      } catch (error) {
+        statusMessage.textContent = 'Impossible de contacter le serveur backend.';
+        statusMessage.className = 'message error';
+        statusMessage.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
