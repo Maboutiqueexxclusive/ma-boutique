@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Boutique Roman Exclusif</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .login-card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-card h2 {
+      margin-bottom: 10px;
+      color: #333333;
+      text-align: center;
+    }
+
+    .login-card p {
+      color: #666666;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #444444;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #0070f3;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: #0051a2;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      text-align: center;
+      display: none;
+    }
+
+    .message.error {
+      background-color: #ffe6e6;
+      color: #d8000c;
+      border: 1px solid #d8000c;
+    }
+
+    .message.success {
+      background-color: #e6ffe6;
+      color: #270;
+      border: 1px solid #270;
+    }
+
+    .redirect-link {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .redirect-link a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+
+    .redirect-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h2>Connexion</h2>
+    <p>Accédez à votre espace pour lire le roman</p>
+
+    <!-- Message de retour (succès ou erreur) -->
+    <div id="status-message" class="message"></div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="login-email">Adresse Email</label>
+        <input type="email" id="login-email" placeholder="exemple@domaine.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="login-password">Mot de passe</label>
+        <input type="password" id="login-password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn-submit">Se connecter</button>
+    </form>
+
+    <div class="redirect-link">
+      Pas encore de compte ? <a href="shop050302.html">S'inscrire ici</a>
+    </div>
+  </div>
+
+  <script>
+    // URL de votre backend Node.js
+    const API_URL = 'http://localhost:3000';
+
+    const loginForm = document.getElementById('login-form');
+    const statusMessage = document.getElementById('status-message');
+
+    // Écouteur d'événement sur la soumission du formulaire
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Récupération des valeurs saisies
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      // Masquer les messages précédents
+      statusMessage.style.display = 'none';
+      statusMessage.className = 'message';
+
+      try {
+        // Envoi des identifiants au serveur Node.js
+        const response = await fetch(`${API_URL}/api/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // 1. Sauvegarder le token JWT dans le stockage local du navigateur
+          localStorage.setItem('token', data.token);
+
+          // 2. Afficher le message de succès
+          statusMessage.textContent = 'Connexion réussie ! Redirection...';
+          statusMessage.classList.add('success');
+          statusMessage.style.display = 'block';
+
+          // 3. Rediriger vers la page du roman après 1.5 seconde
+          setTimeout(() => {
+            window.location.href = 'shop050302.html';
+          }, 1500);
+
+        } else {
+          // Afficher l'erreur renvoyée par l'API (ex: Mot de passe incorrect)
+          statusMessage.textContent = data.error || 'Identifiants invalides.';
+          statusMessage.classList.add('error');
+          statusMessage.style.display = 'block';
+        }
+      } catch (error) {
+        // En cas d'erreur réseau / serveur éteint
+        statusMessage.textContent = 'Impossible de contacter le serveur backend.';
+        statusMessage.classList.add('error');
+        statusMessage.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
