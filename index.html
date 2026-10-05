@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique Exclusive - Diana</title>
+    <style>
+        /* Styles globaux */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        #content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #FFB6C1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            padding: 8px 16px;
+            border: 1px solid #FFB6C1;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            color: #FFB6C1;
+            font-size: 2.3em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #aaa;
+            margin: 0;
+        }
+
+        /* Encadré d'information */
+        .discreet-info-box {
+            background-color: #1a1a1a;
+            border: 1px solid #FFB6C1;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .info-item {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .info-item h3 {
+            color: #FFB6C1;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+
+        .info-item p {
+            font-size: 0.9em;
+            color: #ccc;
+            margin: 5px 0 0 0;
+        }
+
+        /* Section de bienvenue (Ajout du CSS manquant) */
+        .welcome-box {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid #222;
+            overflow: hidden;
+        }
+
+        .hostess-image {
+            float: left;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 20px 10px 0;
+            border: 2px solid #FFB6C1;
+        }
+
+        @media (max-width: 600px) {
+            .hostess-image {
+                float: none;
+                display: block;
+                margin: 0 auto 15px auto;
+            }
+            .welcome-box {
+                text-align: center;
+            }
+        }
+
+        /* Grille des articles */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .shop-card {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFB6C1;
+        }
+
+        .card-img-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+        }
+
+        .shop-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #FFB6C1;
+            color: #121212;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            color: #fff;
+            font-size: 1.3em;
+            margin: 0 0 10px 0;
+        }
+
+        .card-description {
+            color: #bbb;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            font-size: 0.85em;
+            color: #888;
+            border-top: 1px solid #2a2a2a;
+            padding-top: 10px;
+        }
+
+        .options-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .options-list li::before {
+            content: "✦";
+            color: #FFB6C1;
+        }
+
+        .btn-order {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #252525;
+            color: #FFB6C1;
+            border: 1px solid #FFB6C1;
+            padding: 12px 0;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .btn-order:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+
+        <header>
+            <h1>Ma Boutique Exxclusive</h1>
+            <p>Retrouvez mes petits trésors personnels, préparés spécialement selon vos envies.</p>
+        </header>
+
+        <!-- Encadré Réassurance & Discrétion -->
+        <div class="discreet-info-box">
+            <div class="info-item">
+                <h3>📦 Envoi 100% Discret</h3>
+                <p>Enveloppe ou colis neutre sans aucune mention du contenu ni du site.</p>
+            </div>
+            <div class="info-item">
+                <h3>🔒 Confidentialité</h3>
+                <p>Vos informations personnelles restent strictement privées et sécurisées.</p>
+            </div>
+            <div class="info-item">
+                <h3>🎀 Sur-Mesure</h3>
+                <p>Temps de port (24 ou 48h) au choix. Envoi sous réserve de délai selon la demande.</p>
+            </div>
+        </div>
+
+        <div class="welcome-box">
+            <img class="hostess-image" src="shop00.png" alt="Diana">
+            <p><strong>Je suis Diana, maman franco-asiatique, pétillante et un brin coquine!</strong></p>
+            <p>Alors que je franchis le cap des 40 ans, j’ai eu envie de partager mon univers avec vous et de me dévoiler un peu plus.</p>
+            <p>Entre les applis et les dizaines de sites de rencontre, j'avoue que je m'y perdais un peu… J'en ai eu marre d'être éparpillée partout ! J'ai donc préféré créer mon propre petit espace perso : un endroit plus intime, simple et direct pour vous partager mon univers et vous racontez mon parcours que la modération des autres sites ne laisse pas toujours passé.... Installez-vous confortablement, découvrez-en un peu plus sur moi, et si le cœur vous en dit, venez me dire bonjour ! 😉 Je vends aussi mes dessous portés et d'autres accessoires si vous voulez me soutenir et voir toujours plus de contenus...</p>
+            <br>Bisous, Diana</p>
+        </div>
+
+        <main>
+            <div class="shop-grid">
+
+                <!-- Produit 1 -->
+                <div class="shop-card">
+                    <div class="card-img-container">
+                        <img src="shop01.png" alt="Culotte en dentelle">
+                        <span class="price-badge">À partir de 15€</span>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Mes dessous</h2>
+                        <p class="card-description">Culotte, string tanga, bas ou collants fins. Portés spécialement selon la durée de votre choix.</p>
+                        
+                        <ul class="options-list">
+                            <li>Option Portée 24h ou 48h</li>
+                            <li>Parfumée à mon parfum préféré</li>
+                            <li>Mise sous vide hermétique pour préserver la fraîcheur</li>
+                        </ul>
+
+                        <a href="shop01.html" class="btn-order">Voir les modèles</a>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="shop-card">
+                    <div class="card-img-container">
+                        <img src="shop02.png" alt="Avec photos">
+                        <span class="price-badge">À partir de 30€</span>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Mes dessous avec photos</h2>
+                        <p class="card-description">Culottes, bas et dessous portés durant mes sorties, au travail, avec des photos en train de la porter.</p>
+                        
+                        <ul class="options-list">
+                            <li>Option Portée 24h ou 48h</li>
+                            <li>Envoi sous pli hermétique neutre</li>
+                            <li>5 Photos en train de la porter (x2 si 48h)</li>
+                        </ul>
+
+                        <a href="shop02.html" class="btn-order">Voir les modèles</a>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="shop-card">
+                    <div class="card-img-container">
+                        <img src="shop03.png" alt="Accessoires">
+                        <span class="price-badge">À partir de 60€</span>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Sex-toys et accessoires</h2>
+                        <p class="card-description">Les jouets que j'aime utiliser et qui me procurent du plaisir.</p>
+                        
+                        <ul class="options-list">
+                            <li>Choisissez votre accessoire préféré</li>
+                            <li>1 Une vidéo en train de me masturber avec</li>
+                            <li>Envoi sous pli hermétique neutre</li>
+                        </ul>
+
+                        <a href="mailto:votre-email@exemple.com?subject=Commande%20Pack%20Privilege" class="btn-order">Voir les modèles</a>
+                    </div>
+                </div>
+
+                  <!-- Produit 4 -->
+                <div class="shop-card">
+                    <div class="card-img-container">
+                        <img src="shop04.png" alt="Pack coquine">
+                        <span class="price-badge">90€</span>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Pack "Diana Coquine"</h2>
+                        <p class="card-description">Un coffret complet pour les plus gourmands contenant une tenue de mon choix portée, des photos et une vidéo personnalisée. </p>
+                        
+                        <a href="https://buy.stripe.com/28EbIT4aNduG3fs6lvfEk0k" class="btn-order">Commander le pack</a>
+                    </div>
+                </div>
+                
+
+                
+                <!-- Produit 5 -->
+                <div class="shop-card">
+                    <div class="card-img-container">
+                        <img src="shop05.png" alt="Mes photos et videos">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Mes photos et vidéos</h2>
+                        <p class="card-description">Des photos et vidéos professionnelles et d'autres plus personnelles pour me découvrir un peu plus si vous ne souhaitez pas de livraison.</p>
+
+                        <a href="shop04.html" class="btn-order">Voir les photos</a>
+                    </div>
+                </div>
+
+               <!-- Produit 6 -->
+                <div class="shop-card">
+                    <div class="card-img-container">
+                        <img src="shop06.png" alt="Mon histoire">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Mon histoire</h2>
+                        <p class="card-description">Découvrez mon parcours et mes histoires intimes.</p>
+
+
+                        <a href="histoire.html" class="btn-order">Voir les histoires</a>
+                    </div>
+                </div>
+
+    </div>
+<!-- ==================== PIED DE PAGE (FOOTER) ==================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Ma Boutique Exxclusive. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="#" id="open-cgv">Conditions Générales de Vente (CGV)</a></li>
+                <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- ==================== MODALE DES CGV ==================== -->
+    <div id="cgv-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Conditions Générales de Vente (CGV)</h2>
+            <div class="modal-body">
+                <p><em>Dernière mise à jour : 2026</em></p>
+
+                <h3>ARTICLE 1 – PRÉSENTATION ET IDENTITÉ DU VENDEUR</h3>
+                <p>Les présentes Conditions Générales de Vente (CGV) s'appliquent à toutes les ventes conclues sur le présent site internet auprès des consommateurs.</p>
+                <p>
+                    <strong>Éditeur du site :</strong><br>
+                    Ma Boutique Exxclusive<br>
+                    Statut : Empresário em Nome Individual<br>
+                    NIF/SIRET : 290955009<br>
+                    maboutiqueexxclusive@gmail.com<br>
+                    
+                    
+                </p>
+
+                <h3>ARTICLE 2 – CHAMP D'APPLICATION ET ACCEPTATION</h3>
+                <p>Les présentes CGV régissent exclusivement les relations contractuelles entre le Vendeur et tout acheteur effectuant une commande sur le site. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
+
+                <h3>ARTICLE 3 – PRODUITS ET DISPONIBILITÉ</h3>
+                <p>Les produits proposés sont des vêtements et accessoires décrits avec la plus grande exactitude possible. Les photographies sont fournies à titre illustratif. Les offres sont valables dans la limite des stocks disponibles.</p>
+
+                <h3>ARTICLE 4 – PRIX ET PAIEMENT</h3>
+                <p>Les prix sont indiqués en Euros (€) TTC, hors frais de livraison. TVA pour les envois hors Portugal non applicable selon l'article 53 du CIVA (Portugal). Le paiement s'effectue en ligne via les moyens sécurisés proposés lors de la commande.</p>
+
+                <h3>ARTICLE 5 – LIVRAISON</h3>
+                <p>Les livraisons sont effectuées aux adresses indiquées lors de la commande. Envoi sous réserve de délai selon la demande..</p>
+
+                <h3>ARTICLE 6 – DROIT DE RÉTRACTATION (14 JOURS)</h3>
+                <p>Conformément au Décret-Loi n° 24/2014 du 14 février, le Client dispose d'un délai de 14 jours calendaires à compter de la réception de sa commande pour exercer son droit de rétractation sans avoir à justifier de motifs. Les vêtements doivent être retournés dans leur état d'origine, neufs et non portés. Les frais de retour restent à la charge du Client.</p>
+
+                <h3>ARTICLE 7 – GARANTIES LÉGALES</h3>
+                <p>Conformément au Décret-Loi n° 84/2021 du 18 octobre, les biens neufs bénéficient d'une garantie légale de conformité de 3 ans à compter de la délivrance.</p>
+
+                <h3>ARTICLE 8 – PROTECTION DES DONNÉES (RGPD)</h3>
+                <p>Les données personnelles collectées sont nécessaires au traitement de votre commande. Conformément au RGPD (Règlement UE 2016/679), vous disposez d'un droit d'accès, de rectification et de suppression de vos données.</p>
+
+                <h3>ARTICLE 9 – RÉSOLUTION DES LITIGES DE CONSOMMATION</h3>
+                <p>En cas de litige, le Client peut recourir au Livro de Reclamações Eletrónico (<a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">www.livroreclamacoes.pt</a>) ou à une entité de Résolution Alternative des Litiges (RAL), telle que le CNIACC (<a href="https://www.cniacc.pt" target="_blank" rel="noopener">www.cniacc.pt</a>).</p>
+
+                <h3>ARTICLE 10 – DROIT APPLICABLE</h3>
+                <p>Les présentes CGV sont soumises au droit portugais.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== STYLES CSS ==================== -->
+    <style>
+        /* Pied de page transparent pour thème sombre */
+        .site-footer {
+            background-color: transparent !important; /* Suppression du fond blanc */
+            border-top: none;
+            padding: 20px 0;
+            font-size: 0.85rem;
+            color: #b0b0b0; /* Texte clair */
+            text-align: center;
+            margin-top: 40px;
+            font-family: sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Styles Modale CGV sans fond blanc */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .modal-content {
+            background-color: transparent !important;
+            border: none;
+            box-shadow: none;
+            margin: 5% auto;
+            padding: 25px;
+            border-radius: 0;
+            width: 90%;
+            max-width: 750px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: left;
+            font-family: sans-serif;
+            color: #ffffff;
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        .close-btn:hover {
+            color: #cccccc;
+        }
+
+        .modal-body h3 {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .modal-body p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #dddddd;
+        }
+
+        .modal-body a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- ==================== SCRIPT JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("cgv-modal");
+            const btn = document.getElementById("open-cgv");
+            const closeBtn = document.querySelector(".close-btn");
+
+            btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                modal.style.display = "block";
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
