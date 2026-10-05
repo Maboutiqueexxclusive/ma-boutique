@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire #1 - Le Cap des 40 Ans | Le Blog de Diana</title>
+    <style>
+        /* Base & Thème Sombre */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Bouton Retour */
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #FFB6C1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            border: 1px solid #FFB6C1;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        /* Article / Story Card */
+        .story-article {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 35px;
+            border: 1px solid #282828;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        header.story-header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .story-badge {
+            display: inline-block;
+            background-color: rgba(255, 182, 193, 0.15);
+            color: #FFB6C1;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        header.story-header h1 {
+            color: #ffffff;
+            font-size: 2em;
+            margin: 10px 0;
+            line-height: 1.3;
+        }
+
+        .story-meta {
+            color: #888;
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        /* Contenu du texte */
+        .story-body {
+            font-size: 1.05em;
+            color: #d1d1d1;
+        }
+
+        .story-body p {
+            margin-bottom: 20px;
+        }
+
+        .story-body blockquote {
+            border-left: 3px solid #FFB6C1;
+            margin: 25px 0;
+            padding-left: 20px;
+            font-style: italic;
+            color: #FFB6C1;
+            font-size: 1.1em;
+        }
+
+        .story-img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #333;
+        }
+
+        /* Navigation directe entre les chapitres / histoires */
+        .story-navigation {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+        }
+
+        .story-navigation h4 {
+            color: #FFB6C1;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .story-link-card {
+            display: block;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            color: #e0e0e0;
+            text-decoration: none;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .story-link-card:hover {
+            border-color: #FFB6C1;
+            transform: translateY(-2px);
+            background-color: #282828;
+        }
+
+        .story-link-card.active {
+            border-color: #FFB6C1;
+            background-color: rgba(255, 182, 193, 0.05);
+        }
+
+        .story-link-card span {
+            display: block;
+            font-size: 0.8em;
+            color: #FFB6C1;
+            margin-bottom: 5px;
+        }
+
+        .story-link-card strong {
+            font-size: 0.95em;
+        }
+
+        /* Section Interaction/Commentaires */
+        .interaction-section {
+            margin-top: 40px;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #282828;
+            text-align: center;
+        }
+
+        .interaction-section h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .btn-comment {
+            background-color: #FFB6C1;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-comment:hover {
+            background-color: #ffa4b2;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+
+        <!-- Bouton Retour -->
+        <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+
+        <!-- Article Principal -->
+        <article class="story-article">
+            
+            <header class="story-header">
+                <span class="story-badge">Histoire #01</span>
+                <h1>Introduction à mon site</h1>
+                <div class="story-meta">Publié le 05 Octobre 2026 • Par Diana</div>
+            </header>
+
+            <div class="story-body">
+                <p>Je m'appelle <strong>Diana</strong> je suis d'origine asiatique, des Philippines pour etre précise, mariée et maman de trois enfants.
+                    pétillante et avec un petit brin de malice, j’ai toujours aimé croquer la vie à belles dents sans jamais me prendre la tête.</p>
+                
+                <p>Aujourd'hui, alors que je franchis la barre des 40 ans, j'ai ressenti le besoin de partager mes expériences. Passer ce cap, c'est un moment particulier : on se connaît mieux, on s'assume davantage, et surtout, on a beaucoup moins de temps à perdre avec le superflu !</p>
+
+                <p>J'ai voulu un endroit à moi, un petit cocon chaleureux et sans filtre où je peux me dévoiler un peu plus, vous raconter mes anecdotes quotidiennes, mes aventures et partager mon univers avec vous.</p>
+
+                 <p>Certains d'entre vous me connaissent peut etre d'autres nombreux sites sur lequel nous nous sommes croisés. Ma sexualité n'a pas commencé à l«age
+                 adulte et ces sites n'aiment pas trop les histoires de jeunesse... Ni certaines autres pratiques que j'aime faire.
+                 J'ai simplement voulu un endroit à moi, un petit site chaleureux et sans filtre où je peux me dévoiler un peu plus, vous raconter mes anecdotes quotidiennes, mes aventures et partager mon univers avec vous.</p>
+                
+                <p>Installez-vous confortablement, faites vous plaisir et bienvenue dans mon monde. Ce n'est que le début...</p>
+
+                                <blockquote>
+                    « Le cap des 40 ans n'est pas une fin en soi, c'est le début du meilleur chapitre. »
+                </blockquote>
+                
+            </div>
+<!-- Bloc de Navigation vers les histoires -->
+<nav class="story-navigation">
+    <h4>Sommaire des histoires</h4>
+    <div class="story-links-grid">
+        
+        <!-- Ligne 1 : Histoires 1 à 3 -->
+        <a href="histoire01.html" class="story-link-card active">
+            <span>Histoire #01 (En lecture)</span>
+            <strong>Vierge... Mais pas si pure</strong>
+        </a>
+        <a href="histoire02.html" class="story-link-card">
+            <span>Histoire #02</span>
+            <strong>Mes premières soumissions</strong>
+        </a>
+        <a href="histoire03.html" class="story-link-card">
+            <span>Histoire #03</span>
+            <strong>La pute du lycée</strong>
+        </a>
+
+        <!-- Ligne 2 : Histoires 4 à 6 -->
+        <a href="histoire04.html" class="story-link-card">
+            <span>Histoire #04</span>
+            <strong>Histoire 4</strong>
+        </a>
+        <a href="histoire05.html" class="story-link-card">
+            <span>Histoire #05</span>
+            <strong>Histoire 5</strong>
+        </a>
+        <a href="histoire06.html" class="story-link-card">
+            <span>Histoire #06</span>
+            <strong>Histoire 6</strong>
+        </a>
+    </div>
+</nav>
+        </article>
+
+        <!-- Zone d'interaction -->
+        <div class="interaction-section">
+            <h3>Une réaction à partager ?</h3>
+            <p style="color: #aaa; font-size: 0.9em;">Avez-vous aussi franchi un cap récemment ? Laissez-moi un message !</p>
+            <button class="btn-comment" onclick="alert('Module de commentaire bientôt disponible !')">Laisser un commentaire</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
