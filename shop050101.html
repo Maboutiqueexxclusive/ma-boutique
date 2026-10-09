@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo pros</title>
+    <style>
+        /* Styles de base pour rendre la page élégante */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Bouton Retour à l'accueil (Haut à gauche, rectangulaire) */
+        .btn-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-block;
+            background-color: transparent;
+            color: #FFB6C1;
+            border: 1px solid #FFB6C1;
+            padding: 8px 18px;
+            border-radius: 0px; /* Bordure rectangulaire */
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .btn-home:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        #content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            color: #FFB6C1; /* Couleur Rose Clair */
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #aaa;
+            font-size: 1.1em;
+            margin: 0 0 20px 0;
+        }
+
+        /* Bouton de retour vers videopage1.html */
+        .btn-back {
+            display: inline-block;
+            background-color: transparent;
+            color: #FFB6C1;
+            border: 1px solid #FFB6C1;
+            padding: 8px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        /* Grille de la galerie - Adaptée pour de petites miniatures */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        /* Cartes photo plus petites */
+        .photo-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px; /* Taille maximale pour garder des vignettes compactes */
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFB6C1; /* Accentuation au survol */
+        }
+
+        /* Conteneur de l'image réduite */
+        .photo-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Hauteur réduite pour les vignettes */
+            overflow: hidden;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- STYLES DE LA LIGHTBOX (AGRANDISSEMENT) --- */
+        
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #e0e0e0;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #lightbox-close:hover {
+            color: #FFB6C1;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Bouton Retour à l'accueil (Rectangulaire, haut à gauche) -->
+    <a href="index.html" class="btn-home">← retour à l'accueil</a>
+
+    <div id="content">
+        <header>
+            <h1>Photo pros</h1>
+            <p>Galerie exclusive & modèles</p>
+            <!-- Bouton de retour vers la page vidéo -->
+            <a href="shooting.html" class="btn-back">← Retour aux photos pros</a>
+        </header>
+
+        <main class="gallery-grid">
+
+            <!-- Photo 1 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage01.png" alt="Modèle 1" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage02.png" alt="Modèle 2" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage03.png" alt="Modèle 3" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage04.png" alt="Modèle 4" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage05.png" alt="Modèle 5" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 6 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage06.png" alt="Modèle 6" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 7 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage07.png" alt="Modèle 7" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 8 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage08.png" alt="Modèle 8" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 9 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage09.png" alt="Modèle 9" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 10 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage10.png" alt="Modèle 10" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 11 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage11.png" alt="Modèle 11" class="gallery-img">
+                </div>
+            </div>
+
+            <!-- Photo 12 -->
+            <div class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="Bikiniplage12.png" alt="Modèle 12" class="gallery-img">
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- STRUCTURE HTML DE LA LIGHTBOX (PLEIN ÉCRAN) -->
+    <div id="lightbox">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT POUR L'AGRANDISSEMENT AU CLIC -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                const imageSrc = image.getAttribute('src');
+                lightboxImg.setAttribute('src', imageSrc);
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+
+</body>
+</html>
