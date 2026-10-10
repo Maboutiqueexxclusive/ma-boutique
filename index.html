@@ -19,6 +19,28 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
+            position: relative; /* Nécessaire pour positionner les drapeaux par rapport au contenu */
+        }
+
+        /* Sélecteur de langue en haut à droite */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .language-selector a {
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .language-selector a:hover {
+            transform: scale(1.15);
         }
 
         .btn-back {
@@ -90,7 +112,7 @@
             margin: 5px 0 0 0;
         }
 
-        /* Section de bienvenue (Ajout du CSS manquant) */
+        /* Section de bienvenue */
         .welcome-box {
             background-color: #1a1a1a;
             border-radius: 8px;
@@ -118,6 +140,10 @@
             }
             .welcome-box {
                 text-align: center;
+            }
+            .language-selector {
+                top: 10px;
+                right: 10px;
             }
         }
 
@@ -239,8 +265,14 @@
 
     <div id="content">
 
+        <!-- Sélecteur de langue (Drapeaux en haut à droite) -->
+        <div class="language-selector">
+            <a href="index.html" title="Français">🇫🇷</a>
+            <a href="indexeng.html" title="English">🇺🇸</a>
+        </div>
+
         <header>
-            <h1>Ma Boutique Exxclusive</h1>
+            <h1>Ma Boutique Exclusive</h1>
             <p>Retrouvez mes petits trésors personnels, préparés spécialement selon vos envies.</p>
         </header>
 
@@ -265,7 +297,7 @@
             <p><strong>Je suis Diana, maman franco-asiatique, pétillante et un brin coquine!</strong></p>
             <p>Alors que je franchis le cap des 40 ans, j’ai eu envie de partager mon univers avec vous et de me dévoiler un peu plus.</p>
             <p>Entre les applis et les dizaines de sites de rencontre, j'avoue que je m'y perdais un peu… J'en ai eu marre d'être éparpillée partout ! J'ai donc préféré créer mon propre petit espace perso : un endroit plus intime, simple et direct pour vous partager mon univers et vous racontez mon parcours que la modération des autres sites ne laisse pas toujours passé.... Installez-vous confortablement, découvrez-en un peu plus sur moi, et si le cœur vous en dit, venez me dire bonjour ! 😉 Je vends aussi mes dessous portés et d'autres accessoires si vous voulez me soutenir et voir toujours plus de contenus...</p>
-            <br>Bisous, Diana</p>
+            <br>Bisous, Diana
         </div>
 
         <main>
