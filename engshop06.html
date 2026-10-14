@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Exxclusive Shop - Diana</title>
+    <style>
+        /* Base & Thème Sombre */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Bouton Retour */
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #FFB6C1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            border: 1px solid #FFB6C1;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #FFB6C1;
+            color: #121212;
+        }
+
+        /* Article / Story Card */
+        .story-article {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 35px;
+            border: 1px solid #282828;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        header.story-header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .story-badge {
+            display: inline-block;
+            background-color: rgba(255, 182, 193, 0.15);
+            color: #FFB6C1;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        header.story-header h1 {
+            color: #ffffff;
+            font-size: 2em;
+            margin: 10px 0;
+            line-height: 1.3;
+        }
+
+        .story-meta {
+            color: #888;
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        /* Contenu du texte */
+        .story-body {
+            font-size: 1.05em;
+            color: #d1d1d1;
+        }
+
+        .story-body p {
+            margin-bottom: 20px;
+        }
+
+        .story-body blockquote {
+            border-left: 3px solid #FFB6C1;
+            margin: 25px 0;
+            padding-left: 20px;
+            font-style: italic;
+            color: #FFB6C1;
+            font-size: 1.1em;
+        }
+
+        .story-img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #333;
+        }
+
+        /* Navigation directe entre les chapitres / histoires */
+        .story-navigation {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+        }
+
+        .story-navigation h4 {
+            color: #FFB6C1;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .story-link-card {
+            display: block;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            color: #e0e0e0;
+            text-decoration: none;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .story-link-card:hover {
+            border-color: #FFB6C1;
+            transform: translateY(-2px);
+            background-color: #282828;
+        }
+
+        .story-link-card.active {
+            border-color: #FFB6C1;
+            background-color: rgba(255, 182, 193, 0.05);
+        }
+
+        .story-link-card span {
+            display: block;
+            font-size: 0.8em;
+            color: #FFB6C1;
+            margin-bottom: 5px;
+        }
+
+        .story-link-card strong {
+            font-size: 0.95em;
+        }
+
+        /* Section Interaction/Commentaires */
+        .interaction-section {
+            margin-top: 40px;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #282828;
+            text-align: center;
+        }
+
+        .interaction-section h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .btn-comment {
+            background-color: #FFB6C1;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-comment:hover {
+            background-color: #ffa4b2;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+
+        <!-- Bouton Retour -->
+        <a href="index.html" class="btn-back">← Back to homepage</a>
+
+        <!-- Article Principal -->
+        <article class="story-article">
+            
+            <header class="story-header">
+                <span class="story-badge">Story #01</span>
+                <h1>Introduction to my site</h1>
+                <div class="story-meta">Published on October 5, 2026 • By Diana</div>
+            </header>
+
+            <div class="story-body">
+                <p>My name is <strong>Diana</strong> and I am of Asian origin, specifically from the Philippines, and I currently live in Portugal since my divorce, after 20 years spent in France and being a mother of three children.
+                Sparkling and with a bit of mischief, I have always loved grabbing life by the horns without ever taking myself too seriously.</p>
+                
+                <p>Today, as I cross the threshold of 40, I felt the need to share my experiences. Reaching this milestone is a special moment: you know yourself better, you embrace yourself more fully, and above all, you have much less time to waste on the unnecessary!</p>
+
+                <p>I wanted a place that is mine, a cozy little cocoon without filters where I can reveal a bit more of myself, tell you my daily anecdotes, my adventures and share my universe with you.</p>
+
+                 <p>Some of you might know me from the many other sites where our paths have crossed. My sexuality didn't begin in adulthood, and those sites aren't too fond of stories from my younger years—or certain other practices I enjoy.
+I simply wanted a place of my own—a small, warm, and unfiltered site where I can open up a bit more, share my daily anecdotes and adventures, and let you into my world.</p>
+                
+                <p>Make yourself comfortable, treat yourself, and welcome to my world. This is just the beginning...</p>
+
+                                <blockquote>
+                    « Turning 40 isn't an end in itself; it's the start of the best chapter.. »
+                </blockquote>
+                
+            </div>
+<!-- Bloc de Navigation vers les histoires -->
+<nav class="story-navigation">
+    <h4>Summary of stories</h4>
+    <div class="story-links-grid">
+        
+        <!-- Ligne 1 : Histoires 1 à 3 -->
+        <a href="#" class="story-link-card active">
+            <span>Story #01 (En lecture)</span>
+            <strong>Soon available</strong>
+        </a>
+        <a href="#" class="story-link-card">
+            <span>Story #02</span>
+            <strong>Soon available</strong>
+        </a>
+        <a href="#" class="story-link-card">
+            <span>Story #03</span>
+            <strong>Soon available</strong>
+        </a>
+
+        <!-- Ligne 2 : Histoires 4 à 6 -->
+        <a href="#" class="story-link-card">
+            <span>Story #04</span>
+            <strong>Soon available</strong>
+        </a>
+        <a href="#" class="story-link-card">
+            <span>Story #05</span>
+            <strong>Soon available</strong>
+        </a>
+        <a href="#" class="story-link-card">
+            <span>Story #06</span>
+            <strong>Soon available</strong>
+        </a>
+
+        </main>
+
+        <div class="info-footer">
+            <p>🔒 The presented content is regularly updated. Feel free to come back often!</p>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
