@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo pros</title>
+    <title>My Exxclusive Shope - Diana</title>
     <style>
-        /* Styles de base pour rendre la page élégante */
+        /* Styles de base */
         body {
             background-color: #121212;
             color: #e0e0e0;
@@ -26,7 +26,7 @@
             color: #FFB6C1;
             border: 1px solid #FFB6C1;
             padding: 8px 18px;
-            border-radius: 0px; /* Bordure rectangulaire */
+            border-radius: 0px; /* Bords rectangulaires */
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -83,36 +83,40 @@
             color: #121212;
         }
 
-        /* Grille de la galerie - Adaptée pour de petites miniatures */
+        /* Grille de la galerie */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
             justify-items: center;
         }
 
-        /* Cartes photo plus petites */
+        /* Style des cartes avec lien */
         .photo-card {
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             width: 100%;
-            max-width: 200px; /* Taille maximale pour garder des vignettes compactes */
+            max-width: 240px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
         }
 
         .photo-card:hover {
             transform: translateY(-5px);
-            border-color: #FFB6C1; /* Accentuation au survol */
+            border-color: #FFB6C1;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.2);
         }
 
-        /* Conteneur de l'image réduite */
+        /* Conteneur de l'image */
         .photo-wrapper {
             position: relative;
             width: 100%;
-            height: 200px; /* Hauteur réduite pour les vignettes */
+            height: 220px;
             overflow: hidden;
         }
 
@@ -121,173 +125,190 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.3s ease;
         }
 
-        /* --- STYLES DE LA LIGHTBOX (AGRANDISSEMENT) --- */
-        
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+        .photo-card:hover .photo-wrapper img {
+            transform: scale(1.05);
         }
 
-        #lightbox-img {
-            max-width: 90%;
-            max-height: 90%;
-            border: 2px solid #333;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-            object-fit: contain;
-        }
-
-        #lightbox-close {
+                /* AJOUT : Style du span (étiquette) */
+        .type-tag {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #e0e0e0;
-            font-size: 40px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            top: 10px;
+            right: 10px;
+            background-color: #FFB6C1;
+            color: #121212;
+            padding: 4px 10px;
+            font-size: 0.8em;
+            font-weight: 600;
+            border-radius: 4px;
+            z-index: 10;
         }
 
-        #lightbox-close:hover {
+        /* Zone de description sous l'image */
+        .card-info {
+            padding: 15px;
+            text-align: left;
+            background-color: #1e1e1e;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
             color: #FFB6C1;
-            cursor: pointer;
+            font-size: 1.1em;
+            margin: 0 0 6px 0;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            color: #aaa;
+            font-size: 0.88em;
+            margin: 0;
+            line-height: 1.4;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Bouton Retour à l'accueil (Rectangulaire, haut à gauche) -->
+    <!-- Bouton Retour à l'accueil -->
     <a href="homepage.html" class="btn-home">← Back to homepage</a>
 
     <div id="content">
         <header>
-            <h1>Pro pics</h1>
-            <p>Outdoor shooting</p>
-            <!-- Bouton de retour vers la page vidéo -->
-            <a href="shop0501.html" class="btn-back">← Retour aux photos pros</a>
+            <h1>Photos perso</h1>
+            <p>Galeries exclusives</p>
+            <a href="engshop05.html" class="btn-back">← Back to categories</a>
         </header>
 
         <main class="gallery-grid">
 
-            <!-- Photo 1 -->
-            <div class="photo-card">
+            <!-- Photo 01 -->
+            <a href="shop050201.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010201.png" alt="Modèle 1" class="gallery-img">
+                    <img src="image/shop050201bundle.png" alt="Lingerie">
+                    <span class="type-tag">Accès libre</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 01 📸</h2>
+                    <p class="card-desc">En nuisette.</p>
+                </div>
+            </a>
 
-            <!-- Photo 2 -->
-            <div class="photo-card">
+            <!-- Photo 02 -->
+            <a href="shop050202.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010202.png" alt="Modèle 2" class="gallery-img">
+                    <img src="image/shop050202bundle.png" alt="Sexy">
+                    <span class="type-tag">Accès libre</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 02 ✨</h2>
+                    <p class="card-desc">Ma tenue préférée.</p>
+                </div>
+            </a>
 
-            <!-- Photo 3 -->
-            <div class="photo-card">
+            <!-- Photo 03 -->
+            <a href="shop050203.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010203.png" alt="Modèle 3" class="gallery-img">
+                    <img src="image/shop050203bundle.png" alt="Undies">
+                    <span class="type-tag">Accès libre</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 03 📸</h2>
+                    <p class="card-desc">Lingerie & sous-vetements.</p>
+                </div>
+            </a>
 
-            <!-- Photo 4 -->
-            <div class="photo-card">
+            <!-- Photo 04 -->
+            <a href="shop050204.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010204.png" alt="Modèle 4" class="gallery-img">
+                    <img src="image/shop050204bundle.png" alt="Cousine">
+                    <span class="type-tag">Accès pour 50€</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 04 💳</h2>
+                    <p class="card-desc">Coquine avec ma cousine.</p>
+                </div>
+            </a>
 
-            <!-- Photo 5 -->
-            <div class="photo-card">
+            <!-- Photo 05 -->
+            <a href="shop050205.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010205.png" alt="Modèle 5" class="gallery-img">
+                    <img src="image/shop050205bundle.png" alt="Nudes">
+                    <span class="type-tag">Accès pour 50€</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 05 💳</h2>
+                    <p class="card-desc">Photos nue.</p>
+                </div>
+            </a>
 
-            <!-- Photo 6 -->
-            <div class="photo-card">
+            <!-- Photo 06 -->
+            <a href="shop050206.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010206.png" alt="Modèle 6" class="gallery-img">
+                    <img src="image/shop050206bundle.png" alt="Sex">
+                    <span class="type-tag">Accès pour 50€</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 06 💳</h2>
+                    <p class="card-desc">Maman est une petite cochonne.</p>
+                </div>
+            </a>
 
-            <!-- Photo 7 -->
-            <div class="photo-card">
+            <!-- Photo 07 -->
+            <a href="shop050207.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010207.png" alt="Modèle 7" class="gallery-img">
+                    <img src="image/shop050207bundle.png" alt="Blowjob">
+                    <span class="type-tag">Accès pour 75€</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 07 💳</h2>
+                    <p class="card-desc">J'adore sucer.</p>
+                </div>
+            </a>
 
-            <!-- Photo 8 -->
-            <div class="photo-card">
+            <!-- Photo 08 -->
+            <a href="shop050208.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010208.png" alt="Modèle 8" class="gallery-img">
+                    <img src="image/shop050208bundle.png" alt="Piss">
+                    <span class="type-tag">Accès pour 75€</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 08 💳</h2>
+                    <p class="card-desc">Douches dorées.</p>
+                </div>
+            </a>
 
-            <!-- Photo 9 -->
-            <div class="photo-card">
+            <!-- Photo 09 -->
+            <a href="shop050209.html" class="photo-card">
                 <div class="photo-wrapper">
-                    <img src="image\shop05010209.png" alt="Modèle 9" class="gallery-img">
+                    <img src="image/shop050209bundle.png" alt="Anal">
+                    <span class="type-tag">Accès pour 75€</span>
                 </div>
-            </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 09 💳</h2>
+                    <p class="card-desc">Je me la prends dans le cul.</p>
+                </div>
+            </a>
 
+            <!-- Photo 10 -->
+            <a href="shop050210.html" class="photo-card">
+                <div class="photo-wrapper">
+                    <img src="image/shop050210bundle.png" alt="Taboo">
+                    <span class="type-tag">Accès pour 100€</span>
+                </div>
+                <div class="card-info">
+                    <h2 class="card-title">Photos Lot 10 💳</h2>
+                    <p class="card-desc">Hardcore & Taboo.</p>
+                </div>
+            </a>
+            
         </main>
     </div>
-
-    <!-- STRUCTURE HTML DE LA LIGHTBOX (PLEIN ÉCRAN) -->
-    <div id="lightbox">
-        <span id="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Image agrandie">
-    </div>
-
-    <!-- SCRIPT JAVASCRIPT POUR L'AGRANDISSEMENT AU CLIC -->
-    <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const galleryImages = document.querySelectorAll('.gallery-img');
-
-        galleryImages.forEach(image => {
-            image.addEventListener('click', () => {
-                const imageSrc = image.getAttribute('src');
-                lightboxImg.setAttribute('src', imageSrc);
-                lightbox.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        lightboxClose.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
 
 </body>
 </html>
